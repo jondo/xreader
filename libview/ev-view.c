@@ -3463,7 +3463,7 @@ ev_view_scroll_event (GtkWidget *widget, GdkEventScroll *event)
 		view->zoom_center_x = event->x;
 		view->zoom_center_y = event->y;
 
-		if (event->delta_x > 0 || event->delta_y < 0) {
+		if (event->delta_x > 0 || event->delta_y < 0 || event->direction == GDK_SCROLL_UP) {
 			if (ev_view_can_zoom_in (view))
 				ev_view_zoom_in (view);
 		} else {
